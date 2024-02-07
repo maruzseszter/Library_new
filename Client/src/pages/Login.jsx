@@ -78,7 +78,7 @@ const Login = () => {
         <Logo />
         <h4>Belépés</h4>
         <FormRow type='email' name='email' defaultValue='eszter@gmail.com' />
-        <FormRow type='password' name='password' defaultValue='secret_123' />
+        <FormRow type='password' name='password' defaultValue='secret123' />
         <button type='submit' className='btn btn-block' disabled={isSubmitting}>
           {isSubmitting ? 'submitting' : 'belépek'}
          </button>
