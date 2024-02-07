@@ -60,7 +60,7 @@
 
 // export default DashboardLayout;
 
-import { Outlet, redirect, useLoaderData } from 'react-router-dom';
+import { Outlet, redirect, useLoaderData, useNavigate } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/Dashboard';
 import { BigSidebar, Navbar, SmallSidebar } from '../components';
 import { createContext, useContext, useState } from 'react';
@@ -81,7 +81,7 @@ const DashboardContext = createContext();
 
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
   const { user } = useLoaderData();
-  
+  const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
 
@@ -98,9 +98,9 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
 
   const logoutUser = async () => {
     console.log('logout user');
-    // navigate('/');
-    // await customFetch.get('/auth/logout');
-    // toast.success('Logging out...');
+    navigate('/');
+    await customFetch.get('/auth/logout');
+    toast.success('Sikeresen kiléptél!');
   };
   return (
     <DashboardContext.Provider
