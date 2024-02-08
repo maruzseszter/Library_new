@@ -14,14 +14,17 @@ export const loader = async () => {
   }
 };
 
+const AllBooksContext = createContext();
 const AllBooks = () => {
   const { data } = useLoaderData();
   return (
-    <>
-      <SearchContainer />
-      <BooksContainer />
-    </>
+    <AllBooksContext.Provider value={{ data }}>
+    <SearchContainer />
+    <BooksContainer />
+  </AllBooksContext.Provider>
   );
 };
+
+export const useAllBooksContext = () => useContext(AllBooksContext);
 
 export default AllBooks;
