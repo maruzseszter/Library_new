@@ -21,7 +21,7 @@ const AllBooks = () => {
       <SearchContainer />
       <BooksContainer />
     </>
-  )
+  );
 };
 
 export default AllBooks;
