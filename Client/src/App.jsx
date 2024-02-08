@@ -102,7 +102,7 @@ import {
 import { action as registerAction } from './pages/Register';
 import { action as loginAction } from './pages/Login';
 import { loader as dashboardLoader } from './pages/DashboardLayout';
-// import { action as addBookAction } from './pages/AddBook';
+import { action as addBookAction } from './pages/AddBook';
 // import { loader as allBooksLoader } from './pages/AllBooks';
 // import { loader as editBookLoader } from './pages/EditBook';
 // import { action as editBookAction } from './pages/EditBook';
@@ -147,7 +147,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <AddBook />,
-           // action: addBookAction,
+            action: addBookAction,
           },
           {
             path: 'waste',
