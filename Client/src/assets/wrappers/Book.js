@@ -67,7 +67,8 @@ const Wrapper = styled.article`
     align-items: center;
   }
   .edit-btn,
-  .delete-btn {
+  .delete-btn
+  .waste-btn {
     height: 30px;
     font-size: 0.85rem;
     display: flex;
@@ -75,6 +76,13 @@ const Wrapper = styled.article`
   }
   .edit-btn {
     margin-right: 0.5rem;
+  }
+  .waste-btn {
+    height: 30px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
   }
 `;
 
