@@ -1,4 +1,4 @@
-import { FormRow } from '../components';
+import { FormRow, FormRowSelect } from '../components';
 import Wrapper from '../assets/wrappers/DashboardFormPage';
 import { useOutletContext } from 'react-router-dom';
 import { BOOK_TYPE } from '../../../utils/constants';
@@ -20,11 +20,12 @@ const AddBook = () => {
           <FormRow type='number' name='ISBN' />
           <FormRow type='text' name='publisher' labelText='kiadó' />
           <FormRow type='number' name='year' labelText='év' />
-          {/* <FormRowSelect
+          
+         <FormRowSelect
             labelText='kategória'
             name='bookType'
             list={Object.values(BOOK_TYPE)}
-          /> */}
+          /> 
           <FormRow type='number' name='quantity' labelText='darabszám' />
           <button
             type='submit'
@@ -41,3 +42,4 @@ const AddBook = () => {
 };
 
 export default AddBook;
+
