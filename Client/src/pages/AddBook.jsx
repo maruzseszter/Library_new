@@ -6,6 +6,20 @@ import { Form, useNavigation, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
 
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+   try {
+     await customFetch.post('/books', data);
+     toast.success('Könyv sikeresen hozzáadva');
+    return redirect('all-books');
+   } catch (error) {
+     toast.error(error?.response?.data?.msg);
+     return error;
+   }
+};
+
+
 const AddBook = () => {
   const { user } = useOutletContext();
   const navigation = useNavigation();
