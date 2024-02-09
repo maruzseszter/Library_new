@@ -104,8 +104,8 @@ import { action as loginAction } from './pages/Login';
 import { loader as dashboardLoader } from './pages/DashboardLayout';
 import { action as addBookAction } from './pages/AddBook';
 import { loader as allBooksLoader } from './pages/AllBooks';
-// import { loader as editBookLoader } from './pages/EditBook';
-// import { action as editBookAction } from './pages/EditBook';
+import { loader as editBookLoader } from './pages/EditBook';
+import { action as editBookAction } from './pages/EditBook';
 // import { action as deleteBookAction } from './pages/DeleteBook';
 //import { loader as adminLoader } from './pages/Admin';
 // import { action as profileAction } from './pages/Profile';
@@ -171,8 +171,8 @@ const router = createBrowserRouter([
           {
             path: 'edit-book/:id',
             element: <EditBook />,
-            // loader: editBookLoader,
-            // action: editBookAction,
+            loader: editBookLoader,
+            action: editBookAction,
           },
           // {
           //   path: 'delete-book/:id', action: deleteBookAction
