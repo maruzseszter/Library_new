@@ -33,8 +33,32 @@ export const action = async () => {
 
 const EditBook = () => {
   const { book } = useLoaderData();
-  console.log(book);
-    return <h1>EditBook</h1>;
-  };
-  
-  export default EditBook;
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
+  return (
+    <Wrapper>
+      <Form method='post' className='form'>
+        <h4 className='form-title'>könyv szerkesztése</h4>
+        <div className='form-center'>
+          <FormRow type='text' name='title' labelText='cím' defaultValue={book.title} />
+          <FormRow type='text' name='author' labelText='szerző' defaultValue={book.author} />
+          <FormRow type='number' name='ISBN' defaultValue={book.ISBN} />
+          <FormRow type='text' name='publisher' labelText='kiadó' defaultValue={book.publisher} />
+          <FormRow type='number' name='year' labelText='év' defaultValue={book.year} />
+          <FormRowSelect 
+          name='bookType' 
+          labelText='kategória' 
+          defaultValue={book.bookType} 
+          list={Object.values(BOOK_TYPE)}
+          />
+          <FormRow type='number' name='quantity' labelText='darabszám' defaultValue={book.quantity} />
+          <button type='submit' className='btn btn-block form-btn' disabled={isSubmitting}>
+          {isSubmitting? 'submitting...' : 'módosít'}
+          </button>
+        </div>
+      </Form>
+    </Wrapper>
+  );
+};
+
+export default EditBook;
