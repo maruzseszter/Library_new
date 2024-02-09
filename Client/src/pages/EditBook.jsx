@@ -7,15 +7,13 @@ import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
 
 export const loader = async ({ params }) => {
-  // try {
-  //   const { data } = await customFetch.get(`/books/${params.id}`);
-  //   return data;
-  // } catch (error) {
-  //   toast.error(error?.response?.data?.msg);
-  //   return redirect('/dashboard/all-books');
-  // }
-  console.log(params);
-  return null;
+  try {
+    const { data } = await customFetch.get(`/books/${params.id}`);
+    return data;
+  } catch (error) {
+    toast.error(error?.response?.data?.msg);
+    return redirect('/dashboard/all-books');
+  }
 };
 export const action = async () => {
   return null;
@@ -34,8 +32,8 @@ export const action = async () => {
 // };
 
 const EditBook = () => {
-  const params = useParams();
-  console.log(params);
+  const { book } = useLoaderData();
+  console.log(book);
     return <h1>EditBook</h1>;
   };
   
