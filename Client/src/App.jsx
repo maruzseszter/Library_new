@@ -107,7 +107,7 @@ import { loader as allBooksLoader } from './pages/AllBooks';
 import { loader as editBookLoader } from './pages/EditBook';
 import { action as editBookAction } from './pages/EditBook';
 import { action as deleteBookAction } from './pages/DeleteBook';
-//import { loader as adminLoader } from './pages/Admin';
+import { loader as adminLoader } from './pages/Admin';
 // import { action as profileAction } from './pages/Profile';
 
 export const checkDefaultTheme = () => {
@@ -166,7 +166,7 @@ const router = createBrowserRouter([
           {
             path: 'admin',
             element: <Admin />,
-           // loader: adminLoader,
+            loader: adminLoader,
           },
           {
             path: 'edit-book/:id',
@@ -175,7 +175,7 @@ const router = createBrowserRouter([
             action: editBookAction,
           },
           {
-            path: 'delete-book/:id', 
+            path: 'delete-book/:id',
             action: deleteBookAction,
           },
         ]
