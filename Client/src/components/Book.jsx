@@ -34,12 +34,12 @@ const Book = ({
         </div>
 
         <footer className='actions'>
-  <Link to={`../edit-book/${_id}`} className='btn edit-btn'>Módosít</Link>
-  <Form method='post' action={`../delete-book/${_id}`}>
-    <button type='submit' className='btn delete-btn'>Töröl</button>
-  </Form>
-  <button type='submit' className='btn waste-btn'>Selejt</button>
-</footer>
+          <Link to={`../edit-book/${_id}`} className='btn edit-btn'>Módosít</Link>
+          <Form method='post' action={`../delete-book/${_id}`}>
+            <button type='submit' className='btn delete-btn'>Töröl</button>
+          </Form>
+          <button type='submit' className='btn waste-btn'>Selejt</button>
+        </footer>
 
       </div>
     </Wrapper>
