@@ -15,21 +15,19 @@ export const loader = async ({ params }) => {
     return redirect('/dashboard/all-books');
   }
 };
-export const action = async () => {
-  return null;
+
+export const action = async ({ request, params }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData)
+  try {
+    await customFetch.patch(`/books/${params.id}`,data);
+    toast.success('könyv sikeresen szerkesztve');
+    return redirect('/dashboard/all-books');
+  } catch (error) {
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
 };
-// export const action = async ({ request, params }) => {
-//   const formData = await request.formData();
-//   const data = Object.fromEntries(formData)
-//   try {
-//     await customFetch.patch(`/books/${params.id}`,data);
-//     toast.success('könyv sikeresen szerkesztve');
-//     return redirect('/dashboard/all-books');
-//   } catch (error) {
-//     toast.error(error?.response?.data?.msg);
-//     return error;
-//   }
-// };
 
 const EditBook = () => {
   const { book } = useLoaderData();
