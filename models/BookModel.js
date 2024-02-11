@@ -28,7 +28,7 @@ const BookSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: Object.values(BOOK_TYPE),
-      default: BOOK_TYPE.INFORMATICS
+      default: BOOK_TYPE.INFORMATICS,
     },
     quantity: {
       type: Number,
