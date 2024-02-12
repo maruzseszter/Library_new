@@ -108,7 +108,7 @@ import { loader as editBookLoader } from './pages/EditBook';
 import { action as editBookAction } from './pages/EditBook';
 import { action as deleteBookAction } from './pages/DeleteBook';
 import { loader as adminLoader } from './pages/Admin';
-// import { action as profileAction } from './pages/Profile';
+import { action as profileAction } from './pages/Profile';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme =
@@ -161,7 +161,7 @@ const router = createBrowserRouter([
           {
             path: 'profile',
             element: <Profile />,
-            //action: profileAction,
+            action: profileAction,
           },
           {
             path: 'admin',
