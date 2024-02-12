@@ -1,4 +1,4 @@
-import { FaSuitcaseRolling, FaCalendarCheck, FaUser, FaBookOpen } from 'react-icons/fa';
+import { FaUser, FaBookOpen } from 'react-icons/fa';
 import { useLoaderData, redirect } from 'react-router-dom';
 import customFetch from '../utils/customFetch';
 import Wrapper from '../assets/wrappers/StatsContainer';
@@ -20,14 +20,14 @@ const Admin = () => {
   return (
     <Wrapper>
       <StatItem
-        title='felhasználók'
+        title='jelenlegi felhasználók'
         count={users}
         color="#e9b949"
         bcg='#fcefc7'
         icon={<FaUser />}
       />
       <StatItem
-        title='könyvek'
+        title='total books'
         count={books}
         color="#647acb"
         bcg='#e0e8f9'
